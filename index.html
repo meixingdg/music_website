@@ -388,6 +388,115 @@
             opacity: 1;
             transform: none
         }
+        /* Contact Form - start */
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 10px
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+        
+        .form-group label {
+            font: 9px var(--mono);
+            color: #d0bbc1;
+            letter-spacing: .12em;
+            text-transform: uppercase
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #916072;
+            color: var(--paper);
+            font-family: var(--sans);
+            font-size: 15px;
+            padding: 8px 0;
+            outline: none;
+            transition: border-color .3s;
+            resize: vertical
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-bottom-color: var(--paper)
+        }
+        
+        .submit-btn {
+            background: transparent;
+            border: 1px solid #916072;
+            color: var(--paper);
+            font: 10px var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            padding: 16px 28px;
+            cursor: pointer;
+            align-self: flex-start;
+            transition: all .3s;
+            margin-top: 10px
+        }
+        
+        .submit-btn:hover {
+            background: var(--paper);
+            color: var(--burgundy)
+        }
+        /* Contact Form End */
+        
+        .bio-link {
+            display: inline-block;
+            margin-top: 15px;
+            font: 10px var(--mono);
+            color: var(--burgundy);
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 2px;
+            transition: color .3s
+        }
+        
+        .bio-link:hover {
+            color: var(--accent)
+        }
+        /* headshot */
+        
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100svh - 70px)
+        }
+        
+        .hero-image {
+            flex-grow: 1;
+            min-height: 0;
+            position: relative;
+            background: #9c747e
+        }
+        
+        .photo-dl-below {
+            padding: 18px 24px;
+            text-align: right;
+            font: 9px var(--mono);
+            color: var(--soft);
+            letter-spacing: .1em;
+            text-transform: uppercase
+        }
+        
+        .photo-dl-below a {
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 2px;
+            transition: color .3s
+        }
+        
+        .photo-dl-below a:hover {
+            color: var(--burgundy)
+        }
         
         @media(max-width:800px) {
             .wrap {
@@ -494,7 +603,7 @@
                 <a href="#about">About</a>
                 <a href="#media">Media</a>
                 <a href="#calendar">Calendar</a>
-                <a href="#contact">Contact</a>
+                <a href="#contact">Connect</a>
             </nav>
         </div>
     </header>
@@ -504,14 +613,21 @@
                 <div class="eyebrow">Violinist · Artist</div>
                 <h1 class="hero-name">MeiXing Dong</h1>
                 <!--<p class="hero-sub">A violinist moving between tradition, improvisation, and the sounds of now.</p>-->
-                <p class="intro">Classically rooted and creatively restless — making music across contemporary classical, jazz, pop, and the spaces between.</p>
+                <p class="intro">Classically trained and artistically eclectic violinist.</p>
             </div>
-            <!-- <div class="hero-image"><img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1600&q=88" alt="Placeholder performance photograph">
-                <div class="caption">Placeholder image · replace with artist photography</div>
-             -->
-            <div class="hero-image"><img src="images/headshot.jpeg" alt="Headshot">
-                <div class="caption">Headshot - MeiXing Dong</div>
+
+            <div class="hero-right">
+                <div class="hero-image">
+                    <!-- Ensure this src matches your actual image path -->
+                    <img src="images/headshot.jpeg" alt="Headshot">
+                </div>
+                <div class="photo-dl-below">
+                    <a href="images/headshot.jpeg" download>Download Image ⬇</a>
+                </div>
             </div>
+            <!--<div class="hero-image"><img src="images/headshot.jpeg" alt="Headshot">
+                <a class="photo-dl" href="images/headshot.jpeg" download>Download Headshot ⬇</a>
+            </div>-->
 
         </section>
         <section id="about">
@@ -522,10 +638,16 @@
                 </div>
                 <div class="about">
                     <div class="reveal">
-                        <p>Mei is a professional violinist whose work begins with a deep classical foundation and moves outward — toward improvisation, new music, jazz, popular music, collaboration, and whatever sound comes next.</p>
-                        <p>For Mei, genre is less a boundary than a vocabulary. The work is about sound, character, and connection: precision and freedom, intimacy and electricity, the written note and the moment that happens only once.</p>
+                        <p>An artist with eclectic tastes, violinist MeiXing Dong combines rigorous classical training with a wide-ranging artistic curiosity, building a versatile career that transcends traditional boundaries. MeiXing enjoys diverse chamber
+                            music collaborations, performing repertoire that ranges from traditional string quartets to jazz bands. As an orchestral musician, MeiXing has served as Concertmaster of the Carnegie Mellon Opera Orchestra and the Rensselaer
+                            Symphony Orchestra, Associate Concertmaster of the Carnegie Mellon Philharmonic, and Principal Second Violinist of the University of Michigan Campus Symphony Orchestra.
+                        </p>
+                        <p>
+                            Prior summer festivals include the Mendocino Music Festival, where she was an Emerging Artist Fellow, as well as Center Stage Strings, Northwestern University’s Summer Violin Institute, and the Anchorage Chamber Music Festival. She is currently pursuing
+                            a Master of Music degree at Carnegie Mellon University under the instruction of William van der Sloot.
+                        </p>
                     </div>
-                    <!--<div class="bio-note reveal">This is the place for a fuller biography, artistic statement, education, or selected accomplishments. Keep the language personal and let the music lead.</div>-->
+                    <div class="bio-note reveal"><a class="bio-link" href="docs/meixing_dong_bio.pdf" download>Download Bio (PDF) ⬇</a></div>
                 </div>
             </div>
         </section>
@@ -547,11 +669,12 @@
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/X4pM10u1h4U?si=31noGmN6Doz85SYJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="min-height: 420px; border: none;"></iframe>
                     </div>
-                    <a class="media-card reveal" href="#contact">
+                    <!--<a class="media-card reveal" href="#contact">
                         <div class="circle">↗</div>
                         <h3>Latest recording / release</h3>
                         <p>Replace with Spotify, Apple Music, Bandcamp, SoundCloud, or a custom player.</p>
                     </a>
+                -->
                 </div>
             </div>
         </section>
@@ -592,19 +715,53 @@
                 </div>
             </div>
         </section>
+
         <section class="contact" id="contact">
             <div class="wrap contact-grid">
                 <div class="reveal">
-                    <div class="label">Contact</div>
-                    <h2>Let's connect!<br></h2>
-                    <p class="contact-copy">For performances, collaborations, recording sessions, and other musical ideas, get in touch.</p>
+                    <div class="label">Connect</div>
+                    <h2>Let's Connect</h2>
+                    <p class="contact-copy">For performances, collaborations, recording sessions, commissions, and other musical ideas, get in touch.</p>
+
+                    <div class="contact-list" style="margin-top: 40px; border-top: none;">
+                        <a class="contact-item" href="#">
+                            <span style="display: flex; align-items: center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+    Instagram
+  </span>
+                            <strong>@placeholderhandle ↗</strong></a>
+                    </div>
                 </div>
-                <div class="contact-list reveal"><a class="contact-item" href="mailto:hello@yourname.com"><span>Email</span><strong>hello@yourname.com ↗</strong></a><a class="contact-item" href="#"><span>Instagram</span><strong>@yourhandle ↗</strong></a>
-                    <!--<a class="contact-item" href="#"><span>Listen</span><strong>Spotify / Apple Music ↗</strong></a>-->
-                    <a class="contact-item" href="#"><span>Press</span><strong>EPK / Press Kit ↗</strong></a>
+
+                <div class="reveal">
+                    <!-- The Formspree endpoint goes in the action attribute below -->
+                    <form class="contact-form" action="https://formspree.io/f/xyeeezvq" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <label class="checkbox-group">
+          <input type="checkbox" name="mailing_list" value="Yes">
+          <span>Join my mailing list for updates on upcoming performances.</span>
+        </label>
+                        <button type="submit" class="submit-btn">Send Message ↗</button>
+                    </form>
                 </div>
             </div>
         </section>
+
     </main>
     <footer class="wrap"><span>© <span id="year"></span> MeiXing Dong</span>
         <!--<span>Violin · Music · Art</span>-->
